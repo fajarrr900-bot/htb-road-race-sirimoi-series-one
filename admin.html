@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Pendaftar Balap Sepeda</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Daftar Pendaftar Balap Sepeda</h1>
+  </header>
+
+  <main>
+    <section class="admin-container">
+      <h2>Data Pendaftar</h2>
+      <table id="tabelPendaftar" border="1" cellpadding="8" cellspacing="0">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>No. Ponsel</th>
+            <th>Tanggal Lahir</th>
+            <th>Alamat</th>
+            <th>Kategori</th>
+            <th>Tim / Klub</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data akan dimuat dari script -->
+        </tbody>
+      </table>
+      <button id="hapusData">Hapus Semua Data</button>
+    </section>
+  </main>
+
+  <script>
+    // Ambil data dari localStorage
+    const dataPendaftar = JSON.parse(localStorage.getItem("pendaftar")) || [];
+    const tbody = document.querySelector("#tabelPendaftar tbody");
+
+    // Tampilkan data ke tabel
+    if (dataPendaftar.length > 0) {
+      dataPendaftar.forEach((item, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${item.nama}</td>
+          <td>${item.email}</td>
+          <td>${item.ponsel}</td>
+          <td>${item.tgl_lahir}</td>
+          <td>${item.alamat}</td>
+          <td>${item.kategori}</td>
+          <td>${item.tim}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    } else {
+      const row = document.createElement("tr");
+      row.innerHTML = `<td colspan="8" style="text-align:center;">Belum ada pendaftar</td>`;
+      tbody.appendChild(row);
+    }
+
+    // Hapus semua data
+    document.getElementById("hapusData").addEventListener("click", () => {
+      if (confirm("Yakin ingin menghapus semua data pendaftar?")) {
+        localStorage.removeItem("pendaftar");
+        location.reload();
+      }
+    });
+  </script>
+</body>
+</html>

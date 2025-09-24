@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pendaftaran Balap Sepeda</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="logo-balap-sepeda.jpg" alt="Logo Event Balap Sepeda" class="logo">
+    <h1>Hatebicara Road Race Bicycle Sirimoi Series One</h1>
+  </header>
+
+  <main>
+    <!-- Formulir Pendaftaran -->
+    <section class="form-container reveal">
+      <h2>Formulir Pendaftaran</h2>
+      <form id="formPendaftaran">
+        <label>Nama Lengkap:<br>
+          <input type="text" name="nama" required>
+        </label><br>
+
+        <label>Nomor Ponsel:<br>
+          <input type="tel" name="ponsel" required>
+        </label><br>
+
+        <label>Tanggal Lahir:<br>
+          <input type="date" name="tgl_lahir" required>
+        </label><br>
+
+        <label>Alamat Lengkap:<br>
+          <textarea name="alamat" required></textarea>
+        </label><br>
+
+        <label>Kategori Lomba:<br>
+          <select id="category" name="category" required>
+            <option value="">-- Pilih Kategori --</option>
+            <option value="TK/PAUD">TK/PAUD (usia 3-5 tahun)</option>
+            <option value="SD MINI">SD MINI (kelas 1-3 Sekolah Dasar)</option>
+            <option value="SD UMUM">SD UMUM (kelas 4-6 Sekolah Dasar)</option>
+            <option value="SMP">SMP (kelas 1-3 Sekolah Menengah Pertama)</option>
+            <option value="SMA">SMA (kelas 1-3 Sekolah Menengah Atas)</option>
+            <option value="MASTER">MASTER (UMUM)</option>
+          </select>
+        </label><br>
+
+        <!-- Upload Dokumen -->
+        <label>Upload Foto Akta Kelahiran:<br>
+          <input type="file" id="akta" name="akta" accept="image/*,.pdf" required>
+        </label><br>
+        <div id="preview-akta"></div><br>
+
+        <label>Upload Foto Kartu Keluarga:<br>
+          <input type="file" id="kk" name="kk" accept="image/*,.pdf" required>
+        </label><br>
+        <div id="preview-kk"></div><br>
+
+        <label>Nama Tim / Klub:<br>
+          <input type="text" name="tim">
+        </label><br>
+
+        <!-- Persyaratan -->
+        <div class="persyaratan">
+          <h3>Persyaratan Pendaftaran</h3>
+          <ul>
+            <li>Memiliki sepeda balap yang layak pakai.</li>
+            <li>Membawa identitas diri (Kartu Keluarga dan Akta Kelahiran).</li>
+            <li>Sudah melakukan pembayaran biaya pendaftaran.</li>
+          </ul>
+        </div>
+
+        <!-- Checkbox persetujuan -->
+        <div class="persetujuan">
+          <input type="checkbox" id="setuju" required>
+          <label for="setuju">Saya telah membaca dan menyetujui persyaratan pendaftaran.</label>
+        </div>
+
+        <button type="submit">Daftar</button>
+      </form>
+
+      <!-- Pesan hasil submit -->
+      <div id="pesan"></div>
+    </section>
+
+    <!-- Contact Person -->
+    <section class="contact-person reveal">
+      <h2>Contact Person</h2>
+      <p>Jika ada pertanyaan mengenai pendaftaran, silakan hubungi:</p>
+      <ul>
+        <li>📞 aldy: 0822-1440-1881 (WhatsApp)</li>
+        <li>📞 rizky robert: 0822-7155-7499 (WhatsApp)</li>
+    </section>
+
+    <!-- Nomor Rekening -->
+    <section class="rekening reveal">
+      <h2>Pembayaran Pendaftaran</h2>
+      <p>Silakan transfer biaya pendaftaran ke rekening berikut:</p>
+      <ul>
+        <li>🏦 Bank BSI 7291 9171 64 a.n. </li>M. Rizalat
+      </ul>
+      <p>Setelah transfer, harap simpan bukti pembayaran untuk ditunjukkan saat registrasi ulang di lokasi acara.</p>
+    </section>
+
+    <!-- Lokasi Event -->
+    <section class="info reveal">
+      <h2>Lokasi Event</h2>
+      <div class="peta-lokasi">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15874.2766714518!2d127.4742647!3d1.084409!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x329b5b8b60d54087%3A0xeaa34594a95055b8!2sKantor%20Desa%20Hatebicara!5e0!3m2!1sid!2sid!4v1695256900000!5m2!1sid!2sid"
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
